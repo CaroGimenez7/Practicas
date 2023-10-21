@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="counter">0</span>
+    <button id="add">counter++</button>
+    <button id="addFive">counter+5</button>
+    <button id="addTen">addTen</button>
+
+
+    <script>
+
+        const spn = document.getElementById("counter");
+        // const spnFive = 
+        let counter = 0;
+       
+        //bindeo
+        //binding: una asociacion entre un elemento estatico y un elemento dinamico
+
+        document.getElementById("add").addEventListener("click", function(){
+            counter++;
+            refresh();
+        });
+
+        document.getElementById("addFive").addEventListener("click", function(){
+            counter += 5;
+            refresh();
+        })
+
+        document.getElementById("addTen").addEventListener("click", function(){
+            counter += 10;
+            refresh();
+        }) 
+
+        function refresh(){
+            spn.innerText = counter;
+        }
+        
+    </script>
+</body>
+</html>
