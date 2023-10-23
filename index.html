@@ -3,16 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
-<body>
-    <span id="counter">0</span>
+<body> 
+    <!--? si yo ese valor lo necesito obligatoriamente, se rompe todo mi sistema -->
+    <form action="">
+        <div>
+        <label for="email">Email</label>
+        <input  id= "email" type="email" placeholder="Example@example.com">
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input  id= "password" type="password" placeholder="Ingrese su contraseña">
+        </div>
+
+        <div>
+            <label for="password"> Repeat Password</label>
+            <input  id= "repassword" type="password" placeholder="Repita su contraseña">
+        </div>
+
+        <span id="message"></span>
+
+        <div>
+ 
+            <button id="register">Registrarse</button>
+        </div>
+    </form>
+    <ul id="usersList">
+        <li ></li>
+    </ul>
+
+
+    <script src="./js/index.js"></script>
+    <!-- <span id="counter">0</span>
     <button id="add">counter++</button>
     <button id="addFive">counter+5</button>
-    <button id="addTen">addTen</button>
-
-
-    <script>
+    <button id="addTen">counter+10</button> -->
+    <!-- <script>
 
         const spn = document.getElementById("counter");
         // const spnFive = 
@@ -36,10 +65,15 @@
             refresh();
         }) 
 
+        function addCounter(number){
+            counter += number;
+        }
+
         function refresh(){
+            //se encarga de actualizar con los ultimos datos en el html y modificar el valor del span
             spn.innerText = counter;
         }
         
-    </script>
+    </script> -->
 </body>
 </html>
