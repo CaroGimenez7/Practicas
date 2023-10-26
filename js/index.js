@@ -4,6 +4,7 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const repassword = document.getElementById("repassword");
 const spanMessage = document.getElementById("message");
+const usersList = document.getElementById("usersList");
 //endregion
 
 //region variables
@@ -26,8 +27,9 @@ repassword.addEventListener("change", function(e){
 
 btnRegister.addEventListener("click", function(e){
     e.preventDefault();
+   validateUser();
    addUser();
-   console.log(users)
+   refresh();
 });
 //end region
 
@@ -38,6 +40,26 @@ function addUser(){
         password: _password,
     };
    users.push(newUser); 
+}
+
+function refresh(){
+    usersList.innerHTML = "";
+    users.forEach(function(user) {
+         let li = document.createElement("li");
+         let spanMail = document.createElement("span");
+        spanMail.style.color = "green";
+        spanMail.innerText = user.email;
+        li.appendChild(spanMail);
+        usersList.appendChild(li);
+    })
+
+    ;
+}
+
+function validateUser() {
+    if (!_email || _email.trim() === "" ) {
+        throw new Error("El email es obligatorio");
+    }
 }
 
 //endregion
@@ -51,3 +73,17 @@ class User {
     }
 }
 //endregion
+
+{/* <input  id= "email" type="email" placeholder="Example@example.com"></input> */}
+
+//?input creado con POO para crear un objeto de tipo html con la funcion draw que dibuja al elemento.
+// const inputElement = {
+//     type: "email",
+//     placeholder: "Example@example.com",
+//     htmlElementType: "input",
+//     draw: function(){
+//         return `<${this.htmlElementType} type=${this.type} /> `
+//     },
+// };
+
+// console.log(inputElement.draw());
